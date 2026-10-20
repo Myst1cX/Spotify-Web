@@ -59,8 +59,41 @@ Copyright and notices
   this license; the rest of Spotify Web is not.
 
 
-Apache License, Version 2.0 - full text
----------------------------------------
+Spotilol
+--------
+Author:    lyssadev
+Source:    https://github.com/lyssadev/Spotilol (the repository is currently
+           unavailable)
+License:   not verified. The repository is down, so its license could not be
+           checked. Adapted from the v1.2.4 build.
+Included:  no files or library; the parts below were re-implemented in this
+           app's own classes.
+
+Spotify Web's Debug Logging and Logger (introduced in version 1.52) are adapted
+from the debug logger of Spotilol:
+  - the in-memory log store (entry, level and store classes, merged into one
+    class here)
+  - the dbg / clearDebugLog bridge between the web page and the app
+  - the page-side dbg helpers
+  - capturing the WebView's console messages into the log
+  - the search filter (same grammar, without the pkg: and mine keys)
+  - the Logger dialog (rebuilt with plain Android views)
+Changes for Spotify Web include a per-source buffer split, the Source and Level
+buttons, pause behavior, and logging only while Debug Logging is switched on.
+
+The Spotifuck Mobile userscript (loaded by the app from GitHub, not part of the
+APK) adapts Spotilol's ToastFix, which restyles the web player's pop-up
+messages: the rounded pill shape, the title and button styling, the "Dark"
+colours, the entrance animation, swipe-to-dismiss, the exit animation and the
+stack spacing. The script re-implements the logic in its own code and credits
+ToastFix in its header. Its AMOLED and Normal looks, the toast positioning above
+the app's player and nav bars, and the round-icon fix are its own.
+
+Only these parts are based on Spotilol; the rest of Spotify Web is not.
+
+
+Apache License, Version 2.0 - full text (WebViewUpgrade)
+--------------------------------------------------------
 
                                  Apache License
                            Version 2.0, January 2004
