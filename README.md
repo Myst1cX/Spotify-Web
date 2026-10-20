@@ -6,4 +6,4 @@ See [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt).
 
 The custom WebView engine is built on [WebViewUpgrade](https://github.com/JonaNorman/WebViewUpgrade) by JonaNorman (Apache License 2.0). 
 
-Debug Logging and the Logger are adapted from the debug logger of [Spotilol](https://github.com/lyssadev/Spotilol) by lyssadev (repository currently unavailable). 
+Debug Logging and the Logger are adapted from `lyssadev/Spotilol` (repository currently unavailable). The app's toast styling and animations (pill shape, Dark colours, entrance, swipe and exit) come from the Spotifuck Mobile script, which adapts Spotilol's ToastFix.
