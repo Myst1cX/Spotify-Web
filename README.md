@@ -2,7 +2,7 @@
 A wrapper around the Spotify website 
 
 ## Third-party software
-See [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt).
+See [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) (a copy is also bundles inside the app's assets folder).
 
 The custom WebView engine is built on [WebViewUpgrade](https://github.com/JonaNorman/WebViewUpgrade) by JonaNorman (Apache License 2.0). 
 
