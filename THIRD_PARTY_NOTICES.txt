@@ -92,6 +92,33 @@ the app's player and nav bars, and the round-icon fix are its own.
 Only these parts are based on Spotilol; the rest of Spotify Web is not.
 
 
+Eruda
+-----
+Author:    liriliri
+Source:    https://github.com/liriliri/eruda (https://eruda.liriliri.io/)
+License:   MIT License (full text below)
+Included:  eruda.js, version 3.4.3, from the npm package, as assets/eruda.js.
+           Only change: the trailing "//# sourceMappingURL" comment line
+           (it pointed to a source map that is not shipped) was removed.
+
+Spotify Web's Eruda Console (introduced in version 1.61) is the Eruda library,
+bundled in the app. It is a developer console (Console, Elements, Network,
+Resources, Sources, Info, Snippets and Settings tabs) that can be shown on the
+web player page. It is off by default and only runs while Settings > Eruda
+Console is switched on; nothing is loaded from the network.
+
+What Spotify Web does with the library
+  - ErudaConsole (new): reads assets/eruda.js, runs it in the page and calls
+    eruda.init() with the "Dark" theme, eruda.show() when the switch is turned
+    on, and eruda.destroy() when it is turned off.
+  - The library file is not modified. The app wraps it in a small function when
+    it runs it; the file itself is shipped as is.
+
+Copyright and notices
+  Copyright in the library remains with liriliri. Only the library is covered
+  by this license; the rest of Spotify Web is not.
+
+
 Apache License, Version 2.0 - full text (WebViewUpgrade)
 --------------------------------------------------------
 
@@ -296,3 +323,29 @@ Apache License, Version 2.0 - full text (WebViewUpgrade)
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+
+MIT License - full text (Eruda)
+-------------------------------
+
+The MIT License (MIT)
+
+Copyright (c) 2016-present liriliri
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
