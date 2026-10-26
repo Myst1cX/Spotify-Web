@@ -10,4 +10,4 @@ The Eruda Console switch in Settings uses [Eruda](https://github.com/liriliri/er
 
 Debug Logging and the Logger are adapted from Spotilol by lyssadev (`lyssadev/Spotilol`, repository currently unavailable). The app's toast styling and animations (pill shape, Dark colours, entrance, swipe and exit) come from the Spotifuck Mobile userscript, which adapts Spotilol's ToastFix.
 
-The Musixmatch lyrics lookup (Lyrics+ userscript 17.68, signed web API) is adapted from the pull request `fix/musixmatch-signed-web-api` by zensu357 to [bettergnome-lyricsbar](https://github.com/zensu357/bettergnome-lyricsbar/tree/fix/musixmatch-signed-web-api) (MIT License).
+The Musixmatch lyrics lookup through the signed-in web api (Web Lyrics+ userscript, from 17.68+ onwards) is adapted from the pull request `fix/musixmatch-signed-web-api` by zensu357 to [bettergnome-lyricsbar](https://github.com/zensu357/bettergnome-lyricsbar/tree/fix/musixmatch-signed-web-api) (MIT License).
