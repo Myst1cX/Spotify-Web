@@ -119,6 +119,30 @@ Copyright and notices
   by this license; the rest of Spotify Web is not.
 
 
+bettergnome-lyricsbar
+---------------------
+Author:    zensu357 (pull request "fix/musixmatch-signed-web-api" to
+           furkansa50/bettergnome-lyricsbar)
+Source:    https://github.com/zensu357/bettergnome-lyricsbar/tree/fix/musixmatch-signed-web-api
+License:   MIT License (full text below)
+Included:  no files or library; the lookup was re-implemented in the Lyrics+
+           userscript.
+
+Spotify Web's Musixmatch lyrics lookup (Lyrics+ userscript 17.68, released with
+version 1.65) is adapted from this pull request, after Musixmatch removed its
+old route on 2026-10-25. The userscript is loaded by the app from GitHub and is
+not part of the APK.
+  - requests go to the www.musixmatch.com web API (track.search, then
+    track.subtitles.get or track.lyrics.get)
+  - each request is signed with HMAC-SHA256, using a key read from the site's
+    own JavaScript bundle
+The scheme is unofficial and can stop working without an app change.
+
+Copyright and notices
+  Copyright in the repository remains with Ahmad Fikril, as named in its
+  license. Only this lookup is based on the pull request; the rest of Spotify
+  Web is not.
+
 Apache License, Version 2.0 - full text (WebViewUpgrade)
 --------------------------------------------------------
 
@@ -331,6 +355,32 @@ MIT License - full text (Eruda)
 The MIT License (MIT)
 
 Copyright (c) 2016-present liriliri
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+MIT License - full text (bettergnome-lyricsbar)
+-----------------------------------------------
+
+MIT License
+
+Copyright (c) 2026 Ahmad Fikril
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
