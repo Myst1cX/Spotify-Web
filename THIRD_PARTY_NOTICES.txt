@@ -196,6 +196,42 @@ Copyright and notices
   are based on SpotiDuck; the rest of Spotify Web is not.
 
 
+Myspoti
+-------
+Author:    kota-zo (the Myspoti project)
+Source:    https://github.com/kota-zo/myspoti (version 2.1.0 checked)
+License:   GNU General Public License, Version 3 (full text below)
+Included:  no files. The ad handling below is re-implemented by hand in
+           assets/ad_state_hook.js.
+
+Spotify Web follows four things that Myspoti documents or does with Spotify's
+web player (docs/api/ADS.md, BridgeHost.kt, SpotifyPlayer.kt and
+bridge/player-bridge.js in the source):
+  - How an ad is recognised in the player state: content_type "AD", plus the
+    metadata markers is_advertisement, ad_id and a spotify:ad: uri.
+  - Leaving an ad out of the playback state: when a song's natural end leads
+    to an ad but its "skip" leads to another song, the end is pointed at that
+    song, so the page never makes the ad the current track.
+  - When both the end and the skip of a song lead to an ad (Spotify's next try
+    after an ad was left out), playing the song the page shows as next with a
+    plain play command in the same context, shortly before the playing song ends.
+  - How the page's own player is reached: from the React root of the page to the
+    provider that holds the service registry, then the registry entry named
+    PlayerAPI (player-bridge.js), and then skipping inside the page's queue to
+    the next song, putting that song back first in the queue if the page lands
+    on another one (SpotifyPlayer.kt, skipPastAd / restoreAfterAd). The same
+    registry gives the Connect device list (activeDevice, to leave another
+    device's ad alone) and the skip calls are wrapped to see a manual next
+    (traceSkips, which only reports; here it redirects while an ad is due).
+Only those four ideas are used; the code is new JavaScript, not a copy. Myspoti
+itself notes that changing what the page reports is the kind of tampering
+Spotify can detect.
+
+Copyright and notices
+  Copyright in Myspoti remains with its authors. Only the four points above are
+  based on it; the rest of Spotify Web is not.
+
+
 Apache License, Version 2.0 - full text (WebViewUpgrade)
 --------------------------------------------------------
 
