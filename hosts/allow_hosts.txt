@@ -1,0 +1,2 @@
+# Domains that must never end up in hosts/adblock_hosts.txt, even if an upstream list has them.
+# Add a host here when blocking it breaks playback or login.
