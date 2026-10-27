@@ -1,0 +1,40 @@
+# Hand-maintained extra hosts, always merged into hosts/adblock_hosts.txt.
+# One domain per line, '#' starts a comment. A domain also covers its subdomains
+# if the app matches by suffix (SpotiDuck does for two-label entries).
+
+# --- Spotify ad / tracking endpoints (same set as SpotiDuck's core list) ---
+# UNVERIFIED on device: blocking the 8 first-party hosts may be linked to the blank-page bug.
+audio-ads.spotify.com
+ads-akp.spotify.com
+ads-fa.spotify.com
+ads-fa.scdn.co
+mp3ad.scdn.co
+adstudio-assets.scdn.co
+adstudio.spotify.com
+adeventtracker.spotify.com
+pixel.spotify.com
+pixel-static.spotify.com
+aet.spotify.com
+
+# --- Third-party ad / tracking hosts seen on the web player ---
+doubleclick.net
+googlesyndication.com
+amillionads.com
+2mdn.net
+adxcel.com
+fastly-insights.com
+sentry.io
+adsrvr.org
+tracker.samplicio.us
+t.6sc.co
+
+# --- Carried over from the app's old bundled fallback list (not covered by upstream lists) ---
+googletagservices.com
+google-analytics.com
+app-measurement.com
+quantserve.com
+adnxs.com
+rubiconproject.com
+pubmatic.com
+openx.net
+adserver.adtechus.com

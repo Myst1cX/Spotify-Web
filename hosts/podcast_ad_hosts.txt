@@ -1,0 +1,7 @@
+# OPT-IN list, not merged into hosts/adblock_hosts.txt.
+# Podcast ad-insertion / hosting domains. Blocking them may break podcast playback for shows
+# whose audio is served by the host (Spotify Passthrough). Untested on device; keep the app
+# toggle for this list OFF by default until a test with an Omny-hosted show passes.
+omny.fm
+tritondigital.com
+adswizz.com
