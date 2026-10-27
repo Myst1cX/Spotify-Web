@@ -11,3 +11,8 @@ The Eruda Console switch in Settings uses [Eruda](https://github.com/liriliri/er
 Debug Logging and the Logger are adapted from Spotilol by lyssadev (`lyssadev/Spotilol`, repository currently unavailable). The app's toast styling and animations (pill shape, Dark colours, entrance, swipe and exit) come from the Spotifuck Mobile userscript, which adapts Spotilol's ToastFix.
 
 The Musixmatch lyrics lookup through the signed-in web api (Web Lyrics+ userscript, from 17.68+ onwards) is adapted from the pull request `fix/musixmatch-signed-web-api` by zensu357 to [bettergnome-lyricsbar](https://github.com/zensu357/bettergnome-lyricsbar/tree/fix/musixmatch-signed-web-api) (MIT License).
+
+Parts of the ad blocking come from [SpotiDuck](https://github.com/23fpsz/SpotiDuck-Releases) by 23fpsz (GPL-3.0): the ad-ID hook (`ad_state_hook.js`, adapted from Duck's file), the silent audio file (`silent.mp3`), the hosts list handling and built-in ad host set, and the compiled hosts list's sources and format. The media browsing and notification bridge, link handling, login detection and background playback also follow SpotiDuck. 
+
+
+
