@@ -48,3 +48,4 @@ jobs:
           git add hosts/adblock_hosts.txt
           [ -f "$FALLBACK_PATH" ] && git add "$FALLBACK_PATH" || true
           git diff --staged --quiet || (git commit -m "chore(adblock): auto-update compiled hosts/adblock_hosts.txt" && git push)
+ 
