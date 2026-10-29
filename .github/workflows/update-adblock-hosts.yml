@@ -11,14 +11,10 @@ on:
       - 'scripts/compile_hosts.py'
       - 'hosts/extra_hosts.txt'
       - 'hosts/allow_hosts.txt'
+      - 'hosts/podcast_ad_hosts.txt'
 
 permissions:
   contents: write
-
-env:
-  # Bundled fallback copy shipped inside the APK (apktool tree: assets/adblock_hosts.txt).
-  # Skipped automatically if this directory does not exist in the repo.
-  FALLBACK_PATH: assets/adblock_hosts.txt
 
 jobs:
   update-hosts:
@@ -33,19 +29,9 @@ jobs:
       - name: Compile hosts/adblock_hosts.txt
         run: python3 scripts/compile_hosts.py
 
-      - name: Refresh bundled fallback copy
-        run: |
-          if [ -d "$(dirname "$FALLBACK_PATH")" ]; then
-            cp hosts/adblock_hosts.txt "$FALLBACK_PATH"
-          else
-            echo "No $(dirname "$FALLBACK_PATH") directory, skipping fallback copy."
-          fi
-
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add hosts/adblock_hosts.txt
-          [ -f "$FALLBACK_PATH" ] && git add "$FALLBACK_PATH" || true
           git diff --staged --quiet || (git commit -m "chore(adblock): auto-update compiled hosts/adblock_hosts.txt" && git push)
- 
