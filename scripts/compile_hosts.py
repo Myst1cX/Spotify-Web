@@ -7,6 +7,8 @@ parser can read it. Differences from SpotiDuck's workflow:
     being turned into global blocks;
   * IP literals and localhost are skipped;
   * hosts/allow_hosts.txt removes entries from the final list;
+  * hosts/podcast_ad_hosts.txt entries (and their subdomains) are never taken from
+    upstream lists, so the app's podcast toggle alone decides whether they are blocked;
   * the file is NOT overwritten if a source fails or the result shrinks sharply.
 """
 import os
@@ -102,6 +104,7 @@ def previous_count():
 def main():
     domains = set()
     failed = []
+    podcast = read_list(os.path.join(HOSTS_DIR, "podcast_ad_hosts.txt"))
     for u in SOURCES:
         try:
             content = fetch(u)
@@ -112,7 +115,8 @@ def main():
         n = 0
         for line in content.splitlines():
             d = parse_rule(line)
-            if d and not any(d == s or d.endswith("." + s) for s in SPOTIFY_FAMILY):
+            if (d and not any(d == s or d.endswith("." + s) for s in SPOTIFY_FAMILY)
+                    and not any(d == p or d.endswith("." + p) for p in podcast)):
                 domains.add(d)
                 n += 1
         print(f"{n:6d} domains from {u}")
