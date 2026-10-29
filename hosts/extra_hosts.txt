@@ -1,9 +1,7 @@
 # Hand-maintained extra hosts, always merged into hosts/adblock_hosts.txt.
-# One domain per line, '#' starts a comment. A domain also covers its subdomains
-# if the app matches by suffix (SpotiDuck does for two-label entries).
+# One domain per line, '#' starts a comment. A listed domain also blocks its subdomains.
 
 # --- Spotify ad / tracking endpoints (same set as SpotiDuck's core list) ---
-# UNVERIFIED on device: blocking the 8 first-party hosts may be linked to the blank-page bug.
 audio-ads.spotify.com
 ads-akp.spotify.com
 ads-fa.spotify.com
