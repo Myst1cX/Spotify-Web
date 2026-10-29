@@ -527,8 +527,6 @@
 0.0.0.0 deapi.sooplive.com
 0.0.0.0 deappzap.com
 0.0.0.0 debojuagug1sf.cloudfront.net
-0.0.0.0 delivery-cdn-cf.adswizz.com
-0.0.0.0 deliveryengine.adswizz.com
 0.0.0.0 descargaloaca.com
 0.0.0.0 dev.appboy.com
 0.0.0.0 dii.bankaust.com.au
