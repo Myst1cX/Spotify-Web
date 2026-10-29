@@ -14,7 +14,7 @@ The Musixmatch lyrics lookup through the signed-in web api (Web Lyrics+ userscri
 
 Parts of the ad blocking come from [SpotiDuck](https://github.com/23fpsz/SpotiDuck-Releases) by 23fpsz (GPL-3.0): the ad-ID hook (`ad_state_hook.js`, adapted from Duck's file), the silent audio file (`silent.mp3`), the hosts list handling and built-in ad host set, and the compiled hosts list's sources and format. The media browsing and notification bridge, link handling, login detection and background playback also follow SpotiDuck. 
 
-The ad markers, the idea of leaving an ad out of the playback state and the idea of playing the next song shortly before a song ends when Spotify's second try leaves no other song to point to, and the way the page's own player is reached for that, follow what [Myspoti](https://github.com/kota-zo/myspoti) by kota-zo (GPL-3.0) documents about Spotify's web player.
+The ad markers, the idea of leaving an ad out of the playback state and the way the page's own player is reached (read-only, to watch the playing song and to recover a stuck break) follow what [Myspoti](https://github.com/kota-zo/myspoti) by kota-zo (GPL-3.0) documents about Spotify's web player.
 
 
 
