@@ -114,9 +114,21 @@ What Spotify Web does with the library
   - The library file is not modified. The app wraps it in a small function when
     it runs it; the file itself is shipped as is.
 
+The Logger button (introduced in version 1.69) is modelled on Eruda's entry
+button. No Eruda code is included for it; it was re-implemented in the app's own
+native classes (LoggerBubble). What it takes from Eruda:
+  - the overlay idea: a small floating button placed over the screen content
+  - the look of the button: a 40 dp black square with 10 dp rounded corners,
+    faint (opacity 0.3) until touched and 0.8 while pressed
+  - how it works: a touch that moves more than 3 dp is a drag, otherwise it is
+    a tap that opens the panel; the button stays inside the screen, its
+    position is remembered, it starts 10 dp from the bottom right corner, and a
+    remembered position that is out of range goes back to that corner
+    (Eruda's entry button rules)
+
 Copyright and notices
-  Copyright in the library remains with liriliri. Only the library is covered
-  by this license; the rest of Spotify Web is not.
+  Copyright in the library remains with liriliri. Only the library and the
+  ideas listed above are based on Eruda; the rest of Spotify Web is not.
 
 
 bettergnome-lyricsbar
@@ -202,9 +214,10 @@ Author:    kota-zo (the Myspoti project)
 Source:    https://github.com/kota-zo/myspoti (version 2.1.0 checked)
 License:   GNU General Public License, Version 3 (full text below)
 Included:  no files. The ad handling below is re-implemented by hand in
-           assets/ad_state_hook.js.
+           assets/ad_state_hook.js, and the like handling in the media bridge
+           script of the app (smali/e/c.smali).
 
-Spotify Web follows three things that Myspoti documents or does with Spotify's
+Spotify Web follows four things that Myspoti documents or does with Spotify's
 web player (docs/api/ADS.md, BridgeHost.kt, SpotifyPlayer.kt and
 bridge/player-bridge.js in the source):
   - How an ad is recognised in the player state: content_type "AD", plus the
@@ -217,12 +230,16 @@ bridge/player-bridge.js in the source):
     PlayerAPI (player-bridge.js). It is read to watch the playing song, and only
     when a break is stuck is the planned song loaded through it, skipping inside
     the page's queue when the song is there (SpotifyPlayer.kt, skipPastAd).
-Only those three ideas are used; the code is new JavaScript, not a copy. Myspoti
+  - How a song or episode is saved or removed: the same registry route, then
+    the entry named LibraryAPI (player-bridge.js): contains(uris), add({uris})
+    and remove({uris}). Spotify Web (version 1.68) uses them for the like
+    button of the media notification, on the playing item's URI from PlayerAPI.
+Only those four ideas are used; the code is new JavaScript, not a copy. Myspoti
 itself notes that changing what the page reports is the kind of tampering
 Spotify can detect.
 
 Copyright and notices
-  Copyright in Myspoti remains with its authors. Only the three points above are
+  Copyright in Myspoti remains with its authors. Only the four points above are
   based on it; the rest of Spotify Web is not.
 
 
