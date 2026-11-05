@@ -29,9 +29,15 @@ jobs:
       - name: Compile hosts/adblock_hosts.txt
         run: python3 scripts/compile_hosts.py
 
-      - name: Commit and push
+      - name: Commit via API (verified)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FILE: hosts/adblock_hosts.txt
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add hosts/adblock_hosts.txt
-          git diff --staged --quiet || (git commit -m "chore(adblock): auto-update compiled hosts/adblock_hosts.txt" && git push)
+          git diff --quiet -- "$FILE" && exit 0   # nothing changed
+          SHA=$(gh api "repos/$GITHUB_REPOSITORY/contents/$FILE?ref=$GITHUB_REF_NAME" --jq .sha 2>/dev/null || true)
+          gh api -X PUT "repos/$GITHUB_REPOSITORY/contents/$FILE" \
+            -f message="chore(adblock): auto-update compiled $FILE" \
+            -f content="$(base64 -w0 "$FILE")" \
+            -f branch="$GITHUB_REF_NAME" \
+            ${SHA:+-f sha="$SHA"}
