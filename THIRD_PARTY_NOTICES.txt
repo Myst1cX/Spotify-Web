@@ -243,8 +243,81 @@ Copyright and notices
   based on it; the rest of Spotify Web is not.
 
 
-Apache License, Version 2.0 - full text (WebViewUpgrade)
---------------------------------------------------------
+Roboto (variable font)
+----------------------
+Author:    The Roboto Project Authors (designer named in the font file:
+           Christian Robertson)
+Source:    https://github.com/google/fonts/tree/main/ofl/roboto (Google Fonts;
+           file Roboto[wdth,wght].ttf, version 3.015). Built by Google Fonts
+           from the upstream release
+           https://github.com/googlefonts/roboto-3-classic/releases/download/v3.015/Roboto_v3.015.zip
+           of https://github.com/googlefonts/roboto-classic
+License:   SIL Open Font License, Version 1.1 (full text below). The font file
+           states this license itself.
+Included:  assets/fonts/Roboto-VF.ttf (Roboto[wdth,wght].ttf, renamed)
+
+Spotify Web's font lock (introduced in version 1.72) bundles Roboto so that the
+app's own screens, dialogs, toasts and top bar title keep the same font and
+weights whatever font the phone uses. This variable font is used on Android 8.0
+and newer (API 26+). The app asks it for the exact weight each text needs (the
+weight axis runs from 100 to 900; the width axis stays at its default, 100).
+Android 7 uses the static Roboto files listed below instead.
+
+Copyright and notices
+  Copyright 2011 The Roboto Project Authors
+  (https://github.com/googlefonts/roboto-classic). The font file states
+  "Roboto is a trademark of Google." The font is bundled as a file and is not
+  sold by itself. Only this font file is under the SIL Open Font License; the
+  rest of Spotify Web is not.
+
+
+Roboto (static Regular, Medium and Bold)
+----------------------------------------
+Author:    Google
+Source:    https://github.com/googlefonts/roboto-2/releases/tag/v2.138
+           (version 2.138, roboto-unhinted.zip). The project was formerly
+           google/roboto.
+License:   Apache License, Version 2.0 (full text below, shared with
+           WebViewUpgrade). Each font file states this license itself.
+Included:  assets/fonts/Roboto-Regular.ttf, assets/fonts/Roboto-Medium.ttf and
+           assets/fonts/Roboto-Bold.ttf, as in roboto-unhinted.zip, unchanged
+
+Spotify Web's font lock (introduced in version 1.72) uses these three files only
+on Android 7 (API 24-25), where variable fonts are not available, and as a
+fallback if building the variable font fails. The app picks the file nearest to
+the weight a text needs: Bold from 600, Medium from 450, otherwise Regular.
+
+Copyright and notices
+  Copyright 2011 Google Inc. All Rights Reserved. Only these font files are
+  under the Apache License; the rest of Spotify Web is not.
+
+
+Roboto Mono
+-----------
+Author:    The Roboto Mono Project Authors
+Source:    https://github.com/googlefonts/RobotoMono (Roboto Mono, version
+           3.001), taken from the npm package @fontsource/roboto-mono, version
+           5.3.0 (https://fontsource.org/fonts/roboto-mono)
+License:   SIL Open Font License, Version 1.1 (full text below). The font file
+           names the Open Font License (https://openfontlicense.org) as its
+           license.
+Included:  assets/fonts/RobotoMono-Regular.ttf (Regular, version 3.001). Only
+           change: the package's latin, latin-ext, cyrillic and greek subsets
+           were merged into one file (about 64 KB).
+
+Spotify Web's Logger (font lock, introduced in version 1.72) shows its log lines
+in Roboto Mono instead of the phone's monospace font, so the lines look the same
+whatever font the phone uses.
+
+Copyright and notices
+  Copyright 2015 The Roboto Mono Project Authors
+  (https://github.com/googlefonts/robotomono). The font is bundled as a file
+  and is not sold by itself. Only this font file is under the SIL Open Font
+  License; the rest of Spotify Web is not.
+
+
+Apache License, Version 2.0 - full text (WebViewUpgrade, Roboto static fonts)
+-----------------------------------------------------------------------------
 
                                  Apache License
                            Version 2.0, January 2004
@@ -1178,3 +1251,102 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
+
+
+SIL Open Font License, Version 1.1 - full text (Roboto variable font, Roboto Mono)
+----------------------------------------------------------------------------------
+
+Copyright 2011 The Roboto Project Authors (https://github.com/googlefonts/roboto-classic)
+Copyright 2015 The Roboto Mono Project Authors (https://github.com/googlefonts/robotomono)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+https://openfontlicense.org
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
