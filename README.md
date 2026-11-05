@@ -16,4 +16,5 @@ Parts of the ad blocking come from [SpotiDuck](https://github.com/23fpsz/SpotiDu
 
 The ad markers, the idea of leaving an ad out of the playback state and the way the page's own player is reached (read-only, to watch the playing song and to recover a stuck break) follow what [Myspoti](https://github.com/kota-zo/myspoti) by kota-zo (GPL-3.0) documents about Spotify's web player.
 
-The app's own screens, dialogs, toasts and top bar title use the bundled [Roboto](https://github.com/google/fonts/tree/main/ofl/roboto) font by The Roboto Project Authors (SIL Open Font License 1.1), so they look the same whatever font the phone uses. On Android 7 only, the static Roboto Regular, Medium and Bold, version 2.138, from [googlefonts/roboto-2](https://github.com/googlefonts/roboto-2/releases/tag/v2.138) (Google, Apache License 2.0) are used instead. The Logger's lines use the bundled [Roboto Mono](https://github.com/googlefonts/RobotoMono) by The Roboto Mono Project Authors (SIL Open Font License 1.1).
+
+
