@@ -15,7 +15,7 @@ Format of the three hand-edited files: one domain per line, `#` starts a comment
 
 ## The workflow
 
-`.github/workflows/update-adblock-hosts.yml` ("Update AdBlock Hosts") runs `scripts/compile_hosts.py` and commits `hosts/adblock_hosts.txt` if it changed.
+`.github/workflows/update-adblock-hosts.yml` ("Update AdBlock Hosts") runs `scripts/compile_hosts.py` and commits `hosts/adblock_hosts.txt` if it changed. The commit is made through the GitHub API with the workflow's own token, so GitHub signs it and it shows as Verified (author `github-actions[bot]`).
 
 It runs:
 - every day at 03:00 UTC,
