@@ -89,6 +89,24 @@ stack spacing. The script re-implements the logic in its own code and credits
 ToastFix in its header. Its AMOLED and Normal looks, the toast positioning above
 the app's player and nav bars, and the round-icon fix are its own.
 
+Spotify Web's picture-in-picture (introduced in version 1.27) follows Spotilol's
+approach:
+  - declaring picture-in-picture support on the main activity
+  - a bridge call from the web page that enters Activity-level
+    picture-in-picture on the UI thread
+  - a full-size cover-art image view laid over the activity's content, so the
+    floating window shows a clean picture
+  - previous, play/pause and next buttons in the window
+  - refreshing those buttons and the picture on every media status update
+  - a square (1:1) window
+  - undoing the page-side picture-in-picture state, and removing the overlay,
+    when Android refuses to enter picture-in-picture
+Changes for Spotify Web: the window buttons use the same receiver as the media
+notification, the interception of Spotify's own Open Miniplayer button is the
+app's own, and the Lyrics+ window (live lyrics sent as image frames from the
+Lyrics+ userscript, and the script reset that the app triggers when
+picture-in-picture cannot start) is not from Spotilol.
+
 Only these parts are based on Spotilol; the rest of Spotify Web is not.
 
 

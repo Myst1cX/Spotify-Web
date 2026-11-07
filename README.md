@@ -8,7 +8,7 @@ The custom WebView engine is built on [WebViewUpgrade](https://github.com/JonaNo
 
 The Eruda Console switch in Settings uses [Eruda](https://github.com/liriliri/eruda) by liriliri (MIT License). The library file, eruda.js, is bundled in the app's assets folder. The Logger's minimized button (overlay, button size and look, drag and position behavior) is modelled on Eruda's entry button and re-implemented natively in the app.
 
-Debug Logging and the Logger are adapted from Spotilol by lyssadev (`lyssadev/Spotilol`, repository currently unavailable). The app's toast styling and animations (pill shape, Dark colours, entrance, swipe and exit) come from the Spotifuck Mobile userscript, which adapts Spotilol's ToastFix.
+Debug Logging and the Logger are adapted from Spotilol by lyssadev (`lyssadev/Spotilol`, repository currently unavailable). The app's picture-in-picture (entering it from the web page, the cover-art view, the previous, play/pause and next buttons and their live refresh, the square window, undoing the page's picture-in-picture state when Android refuses to enter it) follows Spotilol's approach; the Lyrics+ window's live lyrics, sent as image frames from the Lyrics+ userscript, are not from Spotilol. The app's toast styling and animations (pill shape, Dark colours, entrance, swipe and exit) come from the Spotifuck Mobile userscript, which adapts Spotilol's ToastFix.
 
 The Musixmatch lyrics lookup through the signed-in web api (Web Lyrics+ userscript, from 17.68+ onwards) is adapted from the pull request `fix/musixmatch-signed-web-api` by zensu357 to [bettergnome-lyricsbar](https://github.com/zensu357/bettergnome-lyricsbar/tree/fix/musixmatch-signed-web-api) (MIT License).
 
